@@ -2,6 +2,8 @@
 Demonstrates that you can work with a Vec of dyn traits even without a Box to hold them.
 Motivated by this response: https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=c11f8f2b3e5481faafb6367226de8c1e
 to this blog post: https://dev.to/magnusstrale/rust-trait-objects-in-a-vector-non-trivial-4co5
+
+Added another function call that takes Vec<Box<dyn Shape>> for contrast.
 */
 
 
