@@ -42,11 +42,23 @@ fn do_stuff(objects: Vec<&dyn Shape>) {
     }
 }
 
+fn do_stuff_box(objects: Vec<Box<dyn Shape>>) {
+    for i in objects {
+        println!("{:#?}", i.transformation());
+    }
+}
+
 fn main() {
     let material = Material{bar: 1};
     let transformation = Matrix{foo: 2};
     let sphere = Sphere{transformation, material};
+
+
     let shape = &sphere as &dyn Shape;
     let v = vec![shape];
     do_stuff(v);
+
+    let box_dyn_shape : Box<dyn Shape> = Box::new(sphere);
+    let v_box = vec![box_dyn_shape];
+    do_stuff_box(v_box);
 }
